@@ -17,6 +17,14 @@ app.get('/get',(req,res) =>{
     .catch(err => res.json(err))
 })
 
+//update text decoration data 
+app.put('/update/:id', (req,res) => {
+    const {id} = req.params;
+    TodoModel.findByIdAndUpdate({_id: id}, {done:true})
+    .then(result => res.json(result))
+    .catch(err => res.json(err))
+})
+
 app.delete('/delete/:id', (req,res) => {
     const {id} = req.params;
     TodoModel.findByIdAndDelete({_id: id}) //delete noteItem by using their object _id of mongoose
