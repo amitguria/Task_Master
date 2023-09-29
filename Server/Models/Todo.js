@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 //create our own schema
 const TodoSchema = new mongoose.Schema({
     title: String,
-    content: String
+    content: String,
     done : {
         type: Boolean,
         default: false
