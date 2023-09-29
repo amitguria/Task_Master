@@ -35,7 +35,7 @@ function CreateArea(props) {
       title: note.title,
       content: note.content
     })
-    .then(result => console.log(result))
+    .then(result => location.reload())
     .catch(err => console.log(err)) // if any error occur
 
     setNote({
