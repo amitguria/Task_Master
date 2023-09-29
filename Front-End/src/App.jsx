@@ -17,6 +17,13 @@ function App() {
     .catch(err => console.log(err))
   },[])
 
+    // This is for text-align handle edit
+  const handleEdit = (id) =>{
+    axios.put('http://localhost:3001/update/'+id)
+    .then(result => location.reload())
+    .catch(err => console.log(err))
+  }
+
   function addNote(note) {
     // This note came from CreateArea.jsx props section
     setNotes((prevNotes) => {
@@ -45,12 +52,14 @@ function App() {
       {notes.map(noteItem => {
         return (
           <div className="note">
-            <h1>{noteItem.title}</h1>
-            <p>{noteItem.content}</p>
+            <div className="checkbox" onClick={() => handleEdit(noteItem._id)}>
+              <h1 className= {noteItem.done ? "line_through" : ""}>{noteItem.title}</h1>
+              <p className= {noteItem.done ? "line_through" : ""}>{noteItem.content}</p>
+            </div>
             <button onClick={() => deleteNote(noteItem._id)}>
               <DeleteIcon />
             </button>
-        </div>
+          </div>
         );
       })}
       {/* Iterate through notes and for each item we return 
