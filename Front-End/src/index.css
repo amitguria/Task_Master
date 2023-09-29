@@ -104,3 +104,7 @@ form.create-note button {
   cursor: pointer;
   outline: none;
 }
+
+.line_through {
+  text-decoration: line-through;
+}
