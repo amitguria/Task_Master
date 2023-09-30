@@ -17,5 +17,5 @@ Task Master is a web application built using MongoDB, Express, React, and Node, 
 
 **Disclaimer**: Ensure that you have downloaded MongoDB Compass on your device for this project to function correctly.
 
-## Video
+## Project Video
 https://github.com/amitguria/Task_Master/assets/110809249/92ffaa58-8c7d-45fa-83ad-946775f557d8
